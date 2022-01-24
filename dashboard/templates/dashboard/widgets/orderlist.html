@@ -1,0 +1,80 @@
+{% load tags %}
+
+<div class="card h-100" id="table" data-list='{"valueNames":["aa","bb","cc","dd","ee","ff","gg","hh","ii","jj","kk","ll","mm","nn","oo","pp"],"page":8, "pagination":true, "fallback":"pages-table-fallback"}'>
+    <div class="card-header">
+        <div class="d-flex flex-between-center">
+            <h5 class="mb-0">Order List <span class="fas fa-angle-down"></span></h5>
+            <div>
+                <span class="pe-1"><span class="fas fa-filter"></span></span>
+                <span class="pe-1"><span class="fas fa-link"></span></span>
+                <span class="pe-1"><span class="fas fa-cog"></span></span>
+                <span class="pe-1"><span class="fas fa-window-maximize"></span></span>
+                <span role="button" class="pe-3" onclick="popup()"><span class="fas fa-window-restore"></span></span>
+                <span class="text-warning"><span class="fas fa-times"></span></span>
+            </div>
+        </div>
+    </div>
+    <div class="card-body px-0 py-0">
+        <div class="table-responsive scrollbar">
+            <table class="table table-striped fs--1 mb-0 overflow-hidden">
+                <thead class="bg-200 text-900">
+                <tr>
+                    <th class="sort pe-1 align-middle white-space-nowrap" data-sort="aa">Last Update</th>
+                    <th class="sort pe-1 align-middle white-space-nowrap text-end" data-sort="bb">Side</th>
+                    <th class="sort align-middle white-space-nowrap text-center" data-sort="dd">Pair</th>
+                    <th class="sort pe-1 align-middle white-space-nowrap" data-sort="ee">Parent Order</th>
+                    <th class="sort pe-1 align-middle white-space-nowrap text-end" data-sort="ff">Quantity</th>
+                    <th class="sort pe-1 align-middle white-space-nowrap text-end" data-sort="gg">Net Exec. Qty</th>
+                    <th class="sort align-middle white-space-nowrap text-end" data-sort="hh">% Exec.</th>
+                    <th class="sort pe-1 align-middle white-space-nowrap" data-sort="ii">Price</th>
+                    <th class="sort pe-1 align-middle white-space-nowrap text-end" data-sort="jj">Gross Cons.</th>
+                    <th class="sort pe-1 align-middle white-space-nowrap text-end" data-sort="kk">Limit Price</th>
+                    <th class="sort align-middle white-space-nowrap text-end" data-sort="ll">Status</th>
+                    <th class="sort pe-1 align-middle white-space-nowrap" data-sort="mm">Price</th>
+                    <th class="sort pe-1 align-middle white-space-nowrap text-end" data-sort="nn">Order Type</th>
+                    <th class="sort pe-1 align-middle white-space-nowrap text-end" data-sort="oo">Trader</th>
+                    <th class="sort pe-1 align-middle white-space-nowrap text-center" data-sort="cc">Order ID</th>
+                    <th class="sort align-middle white-space-nowrap text-end" data-sort="pp">Notes</th>
+                </tr>
+                </thead>
+                <tbody class="list">
+                {% for i in onehundred %}
+                    <tr class="btn-reveal-trigger text-800">
+                        <td class="aa align-middle text-nowrap fs--2">{% random_datetime %}</td>
+                        {% random_buy_sell %}
+                        <td class="dd align-middle text-center text-nowrap">BTC-USD</td>
+                        <td class="ee align-middle text-center text-nowrap">-</td>
+                        <td class="ff align-middle text-center">{% random_int 11 32 %}</td>
+                        <td class="gg align-middle text-center">{% random_int 12 100 %}%</td>
+                        <td class="hh align-middle text-end text-nowrap">{% random_decimal 58000 60000 %}</td>
+                        <td class="ii align-middle text-end text-nowrap">{% random_decimal 58000 60000 %}</td>
+                        <td class="jj align-middle text-end text-nowrap">{% random_decimal 58000 60000 %}</td>
+                        <td class="kk align-middle text-end text-nowrap">{% random_decimal 58000 60000 %}</td>
+                        <td class="ll align-middle text-end text-nowrap">{% random_status %}</td>
+                        <td class="mm align-middle text-end text-nowrap">{% random_decimal 58000 60000 %}</td>
+                        <td class="nn align-middle text-end text-nowrap">Smart Post</td>
+                        <td class="oo align-middle text-end text-nowrap">S. Nakamoto</td>
+                        <td class="cc align-middle text-nowrap time text-end fs--2">{% random_uuid %}</td>
+                        <td class="pp align-middle text-end">-</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="text-center d-none" id="pages-table-fallback">
+        <p class="fw-bold fs-1 mt-3">No Page found</p>
+        </div>
+    </div>
+    <div class="card-footer">
+        <div class="row align-items-center">
+        <div class="col">
+            <p class="mb-0 fs--1"><span class="d-none d-sm-inline-block me-2" data-list-info="data-list-info"></span></p>
+        </div>
+        <div class="col-auto d-flex">
+            <ul class="pagination mb-0 me-4"></ul>
+            <button class="btn btn-sm btn-primary" type="button" data-list-pagination="prev"><span>Previous</span></button>
+            <button class="btn btn-sm btn-primary px-4 ms-2" type="button" data-list-pagination="next"><span>Next</span></button>
+        </div>
+        </div>
+    </div>
+</div>

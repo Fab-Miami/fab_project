@@ -1,0 +1,706 @@
+{% extends "dashboard/includes/dashboard_base.html" %}
+{% load static %}
+{% block main %}
+    <main class="main" id="top">
+      <div class="container" data-layout="container">
+      {% include "dashboard/includes/nav-bar.html" %}   
+        <div class="content">
+          <nav class="navbar navbar-light navbar-glass navbar-top navbar-expand">
+
+            <button class="btn navbar-toggler-humburger-icon navbar-toggler me-1 me-sm-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarVerticalCollapse" aria-controls="navbarVerticalCollapse" aria-expanded="false" aria-label="Toggle Navigation"><span class="navbar-toggle-icon"><span class="toggle-line"></span></span></button>
+            <a class="navbar-brand me-1 me-sm-3" href="../../index.html">
+              <div class="d-flex align-items-center"><img class="me-2" src="../../assets/img/icons/spot-illustrations/falcon.png" alt="" width="40" /><span class="font-sans-serif">falcon</span>
+              </div>
+            </a>
+            <ul class="navbar-nav align-items-center d-none d-lg-block">
+              <li class="nav-item">
+                <div class="search-box" data-list='{"valueNames":["title"]}'>
+                  <form class="position-relative" data-bs-toggle="search" data-bs-display="static">
+                    <input class="form-control search-input fuzzy-search" type="search" placeholder="Search..." aria-label="Search" />
+                    <span class="fas fa-search search-box-icon"></span>
+
+                  </form>
+                  <div class="btn-close-falcon-container position-absolute end-0 top-50 translate-middle shadow-none" data-bs-dismiss="search">
+                    <div class="btn-close-falcon" aria-label="Close"></div>
+                  </div>
+                  <div class="dropdown-menu border font-base start-0 mt-2 py-0 overflow-hidden w-100">
+                    <div class="scrollbar list py-3" style="max-height: 24rem;">
+                      <h6 class="dropdown-header fw-medium text-uppercase px-card fs--2 pt-0 pb-2">Recently Browsed</h6><a class="dropdown-item fs--1 px-card py-1 hover-primary" href="../../app/events/event-detail.html">
+                        <div class="d-flex align-items-center">
+                          <span class="fas fa-circle me-2 text-300 fs--2"></span>
+
+                          <div class="fw-normal title">Pages <span class="fas fa-chevron-right mx-1 text-500 fs--2" data-fa-transform="shrink-2"></span> Events</div>
+                        </div>
+                      </a>
+                      <a class="dropdown-item fs--1 px-card py-1 hover-primary" href="../../app/e-commerce/customers.html">
+                        <div class="d-flex align-items-center">
+                          <span class="fas fa-circle me-2 text-300 fs--2"></span>
+
+                          <div class="fw-normal title">E-commerce <span class="fas fa-chevron-right mx-1 text-500 fs--2" data-fa-transform="shrink-2"></span> Customers</div>
+                        </div>
+                      </a>
+
+                      <hr class="bg-200 dark__bg-900" />
+                      <h6 class="dropdown-header fw-medium text-uppercase px-card fs--2 pt-0 pb-2">Suggested Filter</h6><a class="dropdown-item px-card py-1 fs-0" href="../../app/e-commerce/customers.html">
+                        <div class="d-flex align-items-center"><span class="badge fw-medium text-decoration-none me-2 badge-soft-warning">customers:</span>
+                          <div class="flex-1 fs--1 title">All customers list</div>
+                        </div>
+                      </a>
+                      <a class="dropdown-item px-card py-1 fs-0" href="../../app/events/event-detail.html">
+                        <div class="d-flex align-items-center"><span class="badge fw-medium text-decoration-none me-2 badge-soft-success">events:</span>
+                          <div class="flex-1 fs--1 title">Latest events in current month</div>
+                        </div>
+                      </a>
+                      <a class="dropdown-item px-card py-1 fs-0" href="../../app/e-commerce/product/product-grid.html">
+                        <div class="d-flex align-items-center"><span class="badge fw-medium text-decoration-none me-2 badge-soft-info">products:</span>
+                          <div class="flex-1 fs--1 title">Most popular products</div>
+                        </div>
+                      </a>
+
+                      <hr class="bg-200 dark__bg-900" />
+                      <h6 class="dropdown-header fw-medium text-uppercase px-card fs--2 pt-0 pb-2">Files</h6><a class="dropdown-item px-card py-2" href="#!">
+                        <div class="d-flex align-items-center">
+                          <div class="file-thumbnail me-2"><img class="border h-100 w-100 fit-cover rounded-3" src="../../assets/img/products/3-thumb.png" alt="" /></div>
+                          <div class="flex-1">
+                            <h6 class="mb-0 title">iPhone</h6>
+                            <p class="fs--2 mb-0 d-flex"><span class="fw-semi-bold">Antony</span><span class="fw-medium text-600 ms-2">27 Sep at 10:30 AM</span></p>
+                          </div>
+                        </div>
+                      </a>
+                      <a class="dropdown-item px-card py-2" href="#!">
+                        <div class="d-flex align-items-center">
+                          <div class="file-thumbnail me-2"><img class="img-fluid" src="../../assets/img/icons/zip.png" alt="" /></div>
+                          <div class="flex-1">
+                            <h6 class="mb-0 title">Falcon v1.8.2</h6>
+                            <p class="fs--2 mb-0 d-flex"><span class="fw-semi-bold">John</span><span class="fw-medium text-600 ms-2">30 Sep at 12:30 PM</span></p>
+                          </div>
+                        </div>
+                      </a>
+
+                      <hr class="bg-200 dark__bg-900" />
+                      <h6 class="dropdown-header fw-medium text-uppercase px-card fs--2 pt-0 pb-2">Members</h6><a class="dropdown-item px-card py-2" href="../../pages/user/profile.html">
+                        <div class="d-flex align-items-center">
+                          <div class="avatar avatar-l status-online me-2">
+                            <img class="rounded-circle" src="../../assets/img/team/1.jpg" alt="" />
+
+                          </div>
+                          <div class="flex-1">
+                            <h6 class="mb-0 title">Anna Karinina</h6>
+                            <p class="fs--2 mb-0 d-flex">Technext Limited</p>
+                          </div>
+                        </div>
+                      </a>
+                      <a class="dropdown-item px-card py-2" href="../../pages/user/profile.html">
+                        <div class="d-flex align-items-center">
+                          <div class="avatar avatar-l me-2">
+                            <img class="rounded-circle" src="../../assets/img/team/2.jpg" alt="" />
+
+                          </div>
+                          <div class="flex-1">
+                            <h6 class="mb-0 title">Antony Hopkins</h6>
+                            <p class="fs--2 mb-0 d-flex">Brain Trust</p>
+                          </div>
+                        </div>
+                      </a>
+                      <a class="dropdown-item px-card py-2" href="../../pages/user/profile.html">
+                        <div class="d-flex align-items-center">
+                          <div class="avatar avatar-l me-2">
+                            <img class="rounded-circle" src="../../assets/img/team/3.jpg" alt="" />
+
+                          </div>
+                          <div class="flex-1">
+                            <h6 class="mb-0 title">Emma Watson</h6>
+                            <p class="fs--2 mb-0 d-flex">Google</p>
+                          </div>
+                        </div>
+                      </a>
+
+                    </div>
+                    <div class="text-center mt-n3">
+                      <p class="fallback fw-bold fs-1 d-none">No Result Found.</p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <ul class="navbar-nav navbar-nav-icons ms-auto flex-row align-items-center">
+              <li class="nav-item">
+                <div class="theme-control-toggle fa-icon-wait px-2">
+                  <input class="form-check-input ms-0 theme-control-toggle-input" id="themeControlToggle" type="checkbox" data-theme-control="theme" value="dark" />
+                  <label class="mb-0 theme-control-toggle-label theme-control-toggle-light" for="themeControlToggle" data-bs-toggle="tooltip" data-bs-placement="left" title="Switch to light theme"><span class="fas fa-sun fs-0"></span></label>
+                  <label class="mb-0 theme-control-toggle-label theme-control-toggle-dark" for="themeControlToggle" data-bs-toggle="tooltip" data-bs-placement="left" title="Switch to dark theme"><span class="fas fa-moon fs-0"></span></label>
+                </div>
+              </li>
+              <li class="nav-item d-none d-sm-block">
+                <a class="nav-link px-0 notification-indicator notification-indicator-warning notification-indicator-fill fa-icon-wait" href="../../app/e-commerce/shopping-cart.html"><span class="fas fa-shopping-cart" data-fa-transform="shrink-7" style="font-size: 33px;"></span><span class="notification-indicator-number">1</span></a>
+
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link notification-indicator notification-indicator-primary px-0 fa-icon-wait" id="navbarDropdownNotification" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-hide-on-body-scroll="data-hide-on-body-scroll"><span class="fas fa-bell" data-fa-transform="shrink-6" style="font-size: 33px;"></span></a>
+                <div class="dropdown-menu dropdown-menu-end dropdown-menu-card dropdown-menu-notification" aria-labelledby="navbarDropdownNotification">
+                  <div class="card card-notification shadow-none">
+                    <div class="card-header">
+                      <div class="row justify-content-between align-items-center">
+                        <div class="col-auto">
+                          <h6 class="card-header-title mb-0">Notifications</h6>
+                        </div>
+                        <div class="col-auto ps-0 ps-sm-3"><a class="card-link fw-normal" href="#">Mark all as read</a></div>
+                      </div>
+                    </div>
+                    <div class="scrollbar-overlay" style="max-height:19rem">
+                      <div class="list-group list-group-flush fw-normal fs--1">
+                        <div class="list-group-title border-bottom">NEW</div>
+                        <div class="list-group-item">
+                          <a class="notification notification-flush notification-unread" href="#!">
+                            <div class="notification-avatar">
+                              <div class="avatar avatar-2xl me-3">
+                                <img class="rounded-circle" src="../../assets/img/team/1-thumb.png" alt="" />
+
+                              </div>
+                            </div>
+                            <div class="notification-body">
+                              <p class="mb-1"><strong>Emma Watson</strong> replied to your comment : "Hello world 😍"</p>
+                              <span class="notification-time"><span class="me-2" role="img" aria-label="Emoji">💬</span>Just now</span>
+
+                            </div>
+                          </a>
+
+                        </div>
+                        <div class="list-group-item">
+                          <a class="notification notification-flush notification-unread" href="#!">
+                            <div class="notification-avatar">
+                              <div class="avatar avatar-2xl me-3">
+                                <div class="avatar-name rounded-circle"><span>AB</span></div>
+                              </div>
+                            </div>
+                            <div class="notification-body">
+                              <p class="mb-1"><strong>Albert Brooks</strong> reacted to <strong>Mia Khalifa's</strong> status</p>
+                              <span class="notification-time"><span class="me-2 fab fa-gratipay text-danger"></span>9hr</span>
+
+                            </div>
+                          </a>
+
+                        </div>
+                        <div class="list-group-title border-bottom">EARLIER</div>
+                        <div class="list-group-item">
+                          <a class="notification notification-flush" href="#!">
+                            <div class="notification-avatar">
+                              <div class="avatar avatar-2xl me-3">
+                                <img class="rounded-circle" src="../../assets/img/icons/weather-sm.jpg" alt="" />
+
+                              </div>
+                            </div>
+                            <div class="notification-body">
+                              <p class="mb-1">The forecast today shows a low of 20&#8451; in California. See today's weather.</p>
+                              <span class="notification-time"><span class="me-2" role="img" aria-label="Emoji">🌤️</span>1d</span>
+
+                            </div>
+                          </a>
+
+                        </div>
+                        <div class="list-group-item">
+                          <a class="border-bottom-0 notification-unread  notification notification-flush" href="#!">
+                            <div class="notification-avatar">
+                              <div class="avatar avatar-xl me-3">
+                                <img class="rounded-circle" src="../../assets/img/logos/oxford.png" alt="" />
+
+                              </div>
+                            </div>
+                            <div class="notification-body">
+                              <p class="mb-1"><strong>University of Oxford</strong> created an event : "Causal Inference Hilary 2019"</p>
+                              <span class="notification-time"><span class="me-2" role="img" aria-label="Emoji">✌️</span>1w</span>
+
+                            </div>
+                          </a>
+
+                        </div>
+                        <div class="list-group-item">
+                          <a class="border-bottom-0 notification notification-flush" href="#!">
+                            <div class="notification-avatar">
+                              <div class="avatar avatar-xl me-3">
+                                <img class="rounded-circle" src="../../assets/img/team/10.jpg" alt="" />
+
+                              </div>
+                            </div>
+                            <div class="notification-body">
+                              <p class="mb-1"><strong>James Cameron</strong> invited to join the group: United Nations International Children's Fund</p>
+                              <span class="notification-time"><span class="me-2" role="img" aria-label="Emoji">🙋‍</span>2d</span>
+
+                            </div>
+                          </a>
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-footer text-center border-top"><a class="card-link d-block" href="../../app/social/notifications.html">View all</a></div>
+                  </div>
+                </div>
+
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link fa-icon-wait" id="navbarDropdownMenu" role="button" data-hide-on-body-scroll="data-hide-on-body-scroll" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="nine-dots"></span></a>
+                <div class="dropdown-menu dropdown-menu-end dropdown-menu-card" aria-labelledby="navbarDropdownMenu">
+                  <div class="card shadow-none">
+                    <div class="scrollbar-overlay navbar-dropdown-dots">
+                      <div class="card-body px-3">
+                        <div class="row text-center gx-0 gy-0">
+                          <div class="col-4"><a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="../../pages/user/profile.html" target="_blank">
+                              <div class="avatar avatar-2xl"> <img class="rounded-circle" src="../../assets/img/team/3.jpg" alt="" /></div>
+                              <p class="mb-0 fw-medium text-800 text-truncate fs--2">Account</p>
+                            </a></div>
+                          <div class="col-4"><a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="https://themewagon.com/" target="_blank"><img class="rounded" src="../../assets/img/nav-icons/themewagon.png" alt="" width="40" height="40" />
+                              <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Themewagon</p>
+                            </a></div>
+                          <div class="col-4"><a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="https://mailbluster.com/" target="_blank"><img class="rounded" src="../../assets/img/nav-icons/mailbluster.png" alt="" width="40" height="40" />
+                              <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Mailbluster</p>
+                            </a></div>
+                          <div class="col-4"><a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img class="rounded" src="../../assets/img/nav-icons/google.png" alt="" width="40" height="40" />
+                              <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Google</p>
+                            </a></div>
+                          <div class="col-4"><a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img class="rounded" src="../../assets/img/nav-icons/spotify.png" alt="" width="40" height="40" />
+                              <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Spotify</p>
+                            </a></div>
+                          <div class="col-4"><a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img class="rounded" src="../../assets/img/nav-icons/steam.png" alt="" width="40" height="40" />
+                              <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Steam</p>
+                            </a></div>
+                          <div class="col-4"><a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img class="rounded" src="../../assets/img/nav-icons/github-light.png" alt="" width="40" height="40" />
+                              <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Github</p>
+                            </a></div>
+                          <div class="col-4"><a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img class="rounded" src="../../assets/img/nav-icons/discord.png" alt="" width="40" height="40" />
+                              <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Discord</p>
+                            </a></div>
+                          <div class="col-4"><a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img class="rounded" src="../../assets/img/nav-icons/xbox.png" alt="" width="40" height="40" />
+                              <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">xbox</p>
+                            </a></div>
+                          <div class="col-4"><a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img class="rounded" src="../../assets/img/nav-icons/trello.png" alt="" width="40" height="40" />
+                              <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Kanban</p>
+                            </a></div>
+                          <div class="col-4"><a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img class="rounded" src="../../assets/img/nav-icons/hp.png" alt="" width="40" height="40" />
+                              <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Hp</p>
+                            </a></div>
+                          <div class="col-12">
+                            <hr class="my-3 mx-n3 bg-200" />
+                          </div>
+                          <div class="col-4"><a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img class="rounded" src="../../assets/img/nav-icons/linkedin.png" alt="" width="40" height="40" />
+                              <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Linkedin</p>
+                            </a></div>
+                          <div class="col-4"><a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img class="rounded" src="../../assets/img/nav-icons/twitter.png" alt="" width="40" height="40" />
+                              <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Twitter</p>
+                            </a></div>
+                          <div class="col-4"><a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img class="rounded" src="../../assets/img/nav-icons/facebook.png" alt="" width="40" height="40" />
+                              <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Facebook</p>
+                            </a></div>
+                          <div class="col-4"><a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img class="rounded" src="../../assets/img/nav-icons/instagram.png" alt="" width="40" height="40" />
+                              <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Instagram</p>
+                            </a></div>
+                          <div class="col-4"><a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img class="rounded" src="../../assets/img/nav-icons/pinterest.png" alt="" width="40" height="40" />
+                              <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Pinterest</p>
+                            </a></div>
+                          <div class="col-4"><a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img class="rounded" src="../../assets/img/nav-icons/slack.png" alt="" width="40" height="40" />
+                              <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Slack</p>
+                            </a></div>
+                          <div class="col-4"><a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img class="rounded" src="../../assets/img/nav-icons/deviantart.png" alt="" width="40" height="40" />
+                              <p class="mb-0 fw-medium text-800 text-truncate fs--2 pt-1">Deviantart</p>
+                            </a></div>
+                          <div class="col-4"><a class="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="../../app/events/event-detail.html" target="_blank">
+                              <div class="avatar avatar-2xl">
+                                <div class="avatar-name rounded-circle bg-soft-primary text-primary"><span class="fs-2">E</span></div>
+                              </div>
+                              <p class="mb-0 fw-medium text-800 text-truncate fs--2">Events</p>
+                            </a></div>
+                          <div class="col-12"><a class="btn btn-outline-primary btn-sm mt-4" href="#!">Show more</a></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </li>
+              <li class="nav-item dropdown"><a class="nav-link pe-0" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <div class="avatar avatar-xl">
+                    <img class="rounded-circle" src="../../assets/img/team/3-thumb.png" alt="" />
+
+                  </div>
+                </a>
+                <div class="dropdown-menu dropdown-menu-end py-0" aria-labelledby="navbarDropdownUser">
+                  <div class="bg-white dark__bg-1000 rounded-2 py-2">
+                    <a class="dropdown-item fw-bold text-warning" href="#!"><span class="fas fa-crown me-1"></span><span>Go Pro</span></a>
+
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#!">Set status</a>
+                    <a class="dropdown-item" href="../../pages/user/profile.html">Profile &amp; account</a>
+                    <a class="dropdown-item" href="#!">Feedback</a>
+
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="../../pages/user/settings.html">Settings</a>
+                    <a class="dropdown-item" href="../../pages/authentication/card/logout.html">Logout</a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </nav>
+          <div class="card mb-3">
+            <div class="bg-holder d-none d-lg-block bg-card" style="background-image:url(../../assets/img/icons/spot-illustrations/corner-4.png);">
+            </div>
+            <!--/.bg-holder-->
+
+            <div class="card-body position-relative">
+              <div class="row">
+                <div class="col-lg-8">
+                  <h3>Chart Js</h3>
+                  <p class="mb-0">Falcon uses chart.js - simple yet flexible JavaScript charting for designers & developers</p><a class="btn btn-link btn-sm ps-0 mt-2" href="//chartjs.org/docs/latest/" target="_blank">Chart Js documentations<span class="fas fa-chevron-right ms-1 fs--2"></span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3">
+            <div class="card-header">
+              <h5 class="mb-0">Javascript</h5>
+            </div>
+            <div class="card-body bg-light">
+              <pre class="scrollbar mt-2"><code class="language-html">&lt;script src=&quot;vendors/chart/chart.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+            </div>
+          </div>
+          <div class="row g-3 mb-3">
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="card-header">
+                  <div class="row flex-between-end">
+                    <div class="col-auto align-self-center">
+                      <h5 class="mb-0" data-anchor="data-anchor">Bar Chart</h5>
+                    </div>
+                    <div class="col-auto ms-auto">
+                      <div class="nav nav-pills nav-pills-falcon flex-grow-1" role="tablist">
+                        <button class="btn btn-sm active" data-bs-toggle="pill" data-bs-target="#dom-50c4dd6e-8054-4c3f-9b11-05b60912da26" type="button" role="tab" aria-controls="dom-50c4dd6e-8054-4c3f-9b11-05b60912da26" aria-selected="true" id="tab-dom-50c4dd6e-8054-4c3f-9b11-05b60912da26">Preview</button>
+                        <button class="btn btn-sm" data-bs-toggle="pill" data-bs-target="#dom-f177d560-cd44-41f5-a693-c290e694937d" type="button" role="tab" aria-controls="dom-f177d560-cd44-41f5-a693-c290e694937d" aria-selected="false" id="tab-dom-f177d560-cd44-41f5-a693-c290e694937d">Code</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body bg-light">
+                  <div class="tab-content">
+                    <div class="tab-pane preview-tab-pane active" role="tabpanel" aria-labelledby="tab-dom-50c4dd6e-8054-4c3f-9b11-05b60912da26" id="dom-50c4dd6e-8054-4c3f-9b11-05b60912da26">
+                      <!-- Find the JS file for the following chart at: src/js/charts/chartjs/chart-bar.js-->
+                      <!-- If you are not using gulp based workflow, you can find the transpiled code at: public/assets/js/theme.js-->
+                      <canvas class="max-w-100" id="chartjs-bar-chart" width="1618" height="1000"></canvas>
+                    </div>
+                    <div class="tab-pane code-tab-pane" role="tabpanel" aria-labelledby="tab-dom-f177d560-cd44-41f5-a693-c290e694937d" id="dom-f177d560-cd44-41f5-a693-c290e694937d">
+                      <pre class="scrollbar rounded-1" style="max-height:420px"><code class="language-html">
+&lt;!-- Find the JS file for the following chart at: src/js/charts/chartjs/chart-bar.js--&gt;
+
+&lt;!-- If you are not using gulp based workflow, you can find the transpiled code at: public/assets/js/theme.js--&gt;
+&lt;canvas class=&quot;max-w-100&quot; id=&quot;chartjs-bar-chart&quot; width=&quot;1618&quot; height=&quot;1000&quot;&gt;&lt;/canvas&gt;</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="card-header">
+                  <div class="row flex-between-end">
+                    <div class="col-auto align-self-center">
+                      <h5 class="mb-0" data-anchor="data-anchor">Line Chart</h5>
+                    </div>
+                    <div class="col-auto ms-auto">
+                      <div class="nav nav-pills nav-pills-falcon flex-grow-1" role="tablist">
+                        <button class="btn btn-sm active" data-bs-toggle="pill" data-bs-target="#dom-3856e855-7f8e-4a85-a6f0-2e288f06f266" type="button" role="tab" aria-controls="dom-3856e855-7f8e-4a85-a6f0-2e288f06f266" aria-selected="true" id="tab-dom-3856e855-7f8e-4a85-a6f0-2e288f06f266">Preview</button>
+                        <button class="btn btn-sm" data-bs-toggle="pill" data-bs-target="#dom-0fa3d428-f5a1-4930-b9a8-89ff901db410" type="button" role="tab" aria-controls="dom-0fa3d428-f5a1-4930-b9a8-89ff901db410" aria-selected="false" id="tab-dom-0fa3d428-f5a1-4930-b9a8-89ff901db410">Code</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body bg-light">
+                  <div class="tab-content">
+                    <div class="tab-pane preview-tab-pane active" role="tabpanel" aria-labelledby="tab-dom-3856e855-7f8e-4a85-a6f0-2e288f06f266" id="dom-3856e855-7f8e-4a85-a6f0-2e288f06f266">
+                      <!-- Find the JS file for the following chart at: src/js/charts/chartjs/chart-line.js-->
+                      <!-- If you are not using gulp based workflow, you can find the transpiled code at: public/assets/js/theme.js-->
+                      <canvas class="max-w-100" id="chartjs-line-chart" width="1618" height="1000"></canvas>
+                    </div>
+                    <div class="tab-pane code-tab-pane" role="tabpanel" aria-labelledby="tab-dom-0fa3d428-f5a1-4930-b9a8-89ff901db410" id="dom-0fa3d428-f5a1-4930-b9a8-89ff901db410">
+                      <pre class="scrollbar rounded-1" style="max-height:420px"><code class="language-html">
+&lt;!-- Find the JS file for the following chart at: src/js/charts/chartjs/chart-line.js--&gt;
+
+&lt;!-- If you are not using gulp based workflow, you can find the transpiled code at: public/assets/js/theme.js--&gt;
+&lt;canvas class=&quot;max-w-100&quot; id=&quot;chartjs-line-chart&quot; width=&quot;1618&quot; height=&quot;1000&quot;&gt;&lt;/canvas&gt;</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row g-3 mb-3">
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="card-header">
+                  <div class="row flex-between-end">
+                    <div class="col-auto align-self-center">
+                      <h5 class="mb-0" data-anchor="data-anchor">Doughnut Chart</h5>
+                    </div>
+                    <div class="col-auto ms-auto">
+                      <div class="nav nav-pills nav-pills-falcon flex-grow-1" role="tablist">
+                        <button class="btn btn-sm active" data-bs-toggle="pill" data-bs-target="#dom-4e8d52a9-0761-412a-b754-560f248742fe" type="button" role="tab" aria-controls="dom-4e8d52a9-0761-412a-b754-560f248742fe" aria-selected="true" id="tab-dom-4e8d52a9-0761-412a-b754-560f248742fe">Preview</button>
+                        <button class="btn btn-sm" data-bs-toggle="pill" data-bs-target="#dom-a3f20ed3-b3fa-481a-8464-76697c31fc8b" type="button" role="tab" aria-controls="dom-a3f20ed3-b3fa-481a-8464-76697c31fc8b" aria-selected="false" id="tab-dom-a3f20ed3-b3fa-481a-8464-76697c31fc8b">Code</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body bg-light">
+                  <div class="tab-content">
+                    <div class="tab-pane preview-tab-pane active" role="tabpanel" aria-labelledby="tab-dom-4e8d52a9-0761-412a-b754-560f248742fe" id="dom-4e8d52a9-0761-412a-b754-560f248742fe">
+                      <!-- Find the JS file for the following chart at: src/js/charts/chartjs/chart-doughnut.js-->
+                      <!-- If you are not using gulp based workflow, you can find the transpiled code at: public/assets/js/theme.js-->
+                      <canvas class="max-w-100" id="chartjs-doughnut-chart" width="350"></canvas>
+                    </div>
+                    <div class="tab-pane code-tab-pane" role="tabpanel" aria-labelledby="tab-dom-a3f20ed3-b3fa-481a-8464-76697c31fc8b" id="dom-a3f20ed3-b3fa-481a-8464-76697c31fc8b">
+                      <pre class="scrollbar rounded-1" style="max-height:420px"><code class="language-html">
+&lt;!-- Find the JS file for the following chart at: src/js/charts/chartjs/chart-doughnut.js--&gt;
+
+&lt;!-- If you are not using gulp based workflow, you can find the transpiled code at: public/assets/js/theme.js--&gt;
+&lt;canvas class=&quot;max-w-100&quot; id=&quot;chartjs-doughnut-chart&quot; width=&quot;350&quot;&gt;&lt;/canvas&gt;</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="card-header">
+                  <div class="row flex-between-end">
+                    <div class="col-auto align-self-center">
+                      <h5 class="mb-0" data-anchor="data-anchor">Pie Chart</h5>
+                    </div>
+                    <div class="col-auto ms-auto">
+                      <div class="nav nav-pills nav-pills-falcon flex-grow-1" role="tablist">
+                        <button class="btn btn-sm active" data-bs-toggle="pill" data-bs-target="#dom-a1ca398b-ea45-49d6-8394-866d75f7123b" type="button" role="tab" aria-controls="dom-a1ca398b-ea45-49d6-8394-866d75f7123b" aria-selected="true" id="tab-dom-a1ca398b-ea45-49d6-8394-866d75f7123b">Preview</button>
+                        <button class="btn btn-sm" data-bs-toggle="pill" data-bs-target="#dom-dc9ee70c-a6b5-4f99-a0c7-a1ac5b5b6bb4" type="button" role="tab" aria-controls="dom-dc9ee70c-a6b5-4f99-a0c7-a1ac5b5b6bb4" aria-selected="false" id="tab-dom-dc9ee70c-a6b5-4f99-a0c7-a1ac5b5b6bb4">Code</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body bg-light">
+                  <div class="tab-content">
+                    <div class="tab-pane preview-tab-pane active" role="tabpanel" aria-labelledby="tab-dom-a1ca398b-ea45-49d6-8394-866d75f7123b" id="dom-a1ca398b-ea45-49d6-8394-866d75f7123b">
+                      <!-- Find the JS file for the following chart at: src/js/charts/chartjs/chart-pie.js-->
+                      <!-- If you are not using gulp based workflow, you can find the transpiled code at: public/assets/js/theme.js-->
+                      <canvas class="max-w-100" id="chartjs-pie-chart" width="350"></canvas>
+                    </div>
+                    <div class="tab-pane code-tab-pane" role="tabpanel" aria-labelledby="tab-dom-dc9ee70c-a6b5-4f99-a0c7-a1ac5b5b6bb4" id="dom-dc9ee70c-a6b5-4f99-a0c7-a1ac5b5b6bb4">
+                      <pre class="scrollbar rounded-1" style="max-height:420px"><code class="language-html">
+&lt;!-- Find the JS file for the following chart at: src/js/charts/chartjs/chart-pie.js--&gt;
+
+&lt;!-- If you are not using gulp based workflow, you can find the transpiled code at: public/assets/js/theme.js--&gt;
+&lt;canvas class=&quot;max-w-100&quot; id=&quot;chartjs-pie-chart&quot; width=&quot;350&quot;&gt;&lt;/canvas&gt;</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row g-3 mb-3">
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="card-header">
+                  <div class="row flex-between-end">
+                    <div class="col-auto align-self-center">
+                      <h5 class="mb-0" data-anchor="data-anchor">Polar Chart</h5>
+                    </div>
+                    <div class="col-auto ms-auto">
+                      <div class="nav nav-pills nav-pills-falcon flex-grow-1" role="tablist">
+                        <button class="btn btn-sm active" data-bs-toggle="pill" data-bs-target="#dom-2112bd6c-f89b-42de-b9df-792f0997a9ea" type="button" role="tab" aria-controls="dom-2112bd6c-f89b-42de-b9df-792f0997a9ea" aria-selected="true" id="tab-dom-2112bd6c-f89b-42de-b9df-792f0997a9ea">Preview</button>
+                        <button class="btn btn-sm" data-bs-toggle="pill" data-bs-target="#dom-561b3884-5dc4-41e0-9a5e-f87e28ce6f8b" type="button" role="tab" aria-controls="dom-561b3884-5dc4-41e0-9a5e-f87e28ce6f8b" aria-selected="false" id="tab-dom-561b3884-5dc4-41e0-9a5e-f87e28ce6f8b">Code</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body bg-light">
+                  <div class="tab-content">
+                    <div class="tab-pane preview-tab-pane active" role="tabpanel" aria-labelledby="tab-dom-2112bd6c-f89b-42de-b9df-792f0997a9ea" id="dom-2112bd6c-f89b-42de-b9df-792f0997a9ea">
+                      <!-- Find the JS file for the following chart at: src/js/charts/chartjs/chart-polar.js-->
+                      <!-- If you are not using gulp based workflow, you can find the transpiled code at: public/assets/js/theme.js-->
+                      <canvas class="max-w-100" id="chartjs-polar-chart" width="350"></canvas>
+                    </div>
+                    <div class="tab-pane code-tab-pane" role="tabpanel" aria-labelledby="tab-dom-561b3884-5dc4-41e0-9a5e-f87e28ce6f8b" id="dom-561b3884-5dc4-41e0-9a5e-f87e28ce6f8b">
+                      <pre class="scrollbar rounded-1" style="max-height:420px"><code class="language-html">
+&lt;!-- Find the JS file for the following chart at: src/js/charts/chartjs/chart-polar.js--&gt;
+
+&lt;!-- If you are not using gulp based workflow, you can find the transpiled code at: public/assets/js/theme.js--&gt;
+&lt;canvas class=&quot;max-w-100&quot; id=&quot;chartjs-polar-chart&quot; width=&quot;350&quot;&gt;&lt;/canvas&gt;</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="card-header">
+                  <div class="row flex-between-end">
+                    <div class="col-auto align-self-center">
+                      <h5 class="mb-0" data-anchor="data-anchor">Radar Chart</h5>
+                    </div>
+                    <div class="col-auto ms-auto">
+                      <div class="nav nav-pills nav-pills-falcon flex-grow-1" role="tablist">
+                        <button class="btn btn-sm active" data-bs-toggle="pill" data-bs-target="#dom-efe2c72c-8d85-43c4-8b8e-2ea8635a48c2" type="button" role="tab" aria-controls="dom-efe2c72c-8d85-43c4-8b8e-2ea8635a48c2" aria-selected="true" id="tab-dom-efe2c72c-8d85-43c4-8b8e-2ea8635a48c2">Preview</button>
+                        <button class="btn btn-sm" data-bs-toggle="pill" data-bs-target="#dom-ae1833e7-6144-4303-a2c1-91cb049c30a5" type="button" role="tab" aria-controls="dom-ae1833e7-6144-4303-a2c1-91cb049c30a5" aria-selected="false" id="tab-dom-ae1833e7-6144-4303-a2c1-91cb049c30a5">Code</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body bg-light">
+                  <div class="tab-content">
+                    <div class="tab-pane preview-tab-pane active" role="tabpanel" aria-labelledby="tab-dom-efe2c72c-8d85-43c4-8b8e-2ea8635a48c2" id="dom-efe2c72c-8d85-43c4-8b8e-2ea8635a48c2">
+                      <!-- Find the JS file for the following chart at: src/js/charts/chartjs/chart-radar.js-->
+                      <!-- If you are not using gulp based workflow, you can find the transpiled code at: public/assets/js/theme.js-->
+                      <canvas class="max-w-100" id="chartjs-radar-chart" width="350"></canvas>
+                    </div>
+                    <div class="tab-pane code-tab-pane" role="tabpanel" aria-labelledby="tab-dom-ae1833e7-6144-4303-a2c1-91cb049c30a5" id="dom-ae1833e7-6144-4303-a2c1-91cb049c30a5">
+                      <pre class="scrollbar rounded-1" style="max-height:420px"><code class="language-html">
+&lt;!-- Find the JS file for the following chart at: src/js/charts/chartjs/chart-radar.js--&gt;
+
+&lt;!-- If you are not using gulp based workflow, you can find the transpiled code at: public/assets/js/theme.js--&gt;
+&lt;canvas class=&quot;max-w-100&quot; id=&quot;chartjs-radar-chart&quot; width=&quot;350&quot;&gt;&lt;/canvas&gt;</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row g-3 mb-3">
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="card-header">
+                  <div class="row flex-between-end">
+                    <div class="col-auto align-self-center">
+                      <h5 class="mb-0" data-anchor="data-anchor">Bubble Chart</h5>
+                    </div>
+                    <div class="col-auto ms-auto">
+                      <div class="nav nav-pills nav-pills-falcon flex-grow-1" role="tablist">
+                        <button class="btn btn-sm active" data-bs-toggle="pill" data-bs-target="#dom-50c316c0-04aa-4feb-a2ed-ee6c2a5641d9" type="button" role="tab" aria-controls="dom-50c316c0-04aa-4feb-a2ed-ee6c2a5641d9" aria-selected="true" id="tab-dom-50c316c0-04aa-4feb-a2ed-ee6c2a5641d9">Preview</button>
+                        <button class="btn btn-sm" data-bs-toggle="pill" data-bs-target="#dom-d36b87d0-e5da-43d3-9f57-2f4aa5074669" type="button" role="tab" aria-controls="dom-d36b87d0-e5da-43d3-9f57-2f4aa5074669" aria-selected="false" id="tab-dom-d36b87d0-e5da-43d3-9f57-2f4aa5074669">Code</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body bg-light">
+                  <div class="tab-content">
+                    <div class="tab-pane preview-tab-pane active" role="tabpanel" aria-labelledby="tab-dom-50c316c0-04aa-4feb-a2ed-ee6c2a5641d9" id="dom-50c316c0-04aa-4feb-a2ed-ee6c2a5641d9">
+                      <!-- Find the JS file for the following chart at: src/js/charts/chartjs/chart-bubble.js-->
+                      <!-- If you are not using gulp based workflow, you can find the transpiled code at: public/assets/js/theme.js-->
+                      <canvas class="max-w-100" id="chartjs-bubble-chart" height="200"></canvas>
+                    </div>
+                    <div class="tab-pane code-tab-pane" role="tabpanel" aria-labelledby="tab-dom-d36b87d0-e5da-43d3-9f57-2f4aa5074669" id="dom-d36b87d0-e5da-43d3-9f57-2f4aa5074669">
+                      <pre class="scrollbar rounded-1" style="max-height:420px"><code class="language-html">
+&lt;!-- Find the JS file for the following chart at: src/js/charts/chartjs/chart-bubble.js--&gt;
+
+&lt;!-- If you are not using gulp based workflow, you can find the transpiled code at: public/assets/js/theme.js--&gt;
+&lt;canvas class=&quot;max-w-100&quot; id=&quot;chartjs-bubble-chart&quot; height=&quot;200&quot;&gt;&lt;/canvas&gt;</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="card-header">
+                  <div class="row flex-between-end">
+                    <div class="col-auto align-self-center">
+                      <h5 class="mb-0" data-anchor="data-anchor">Scatter Chart</h5>
+                    </div>
+                    <div class="col-auto ms-auto">
+                      <div class="nav nav-pills nav-pills-falcon flex-grow-1" role="tablist">
+                        <button class="btn btn-sm active" data-bs-toggle="pill" data-bs-target="#dom-b01faf7b-4e0f-49c6-8f7f-bf8b9e6defc8" type="button" role="tab" aria-controls="dom-b01faf7b-4e0f-49c6-8f7f-bf8b9e6defc8" aria-selected="true" id="tab-dom-b01faf7b-4e0f-49c6-8f7f-bf8b9e6defc8">Preview</button>
+                        <button class="btn btn-sm" data-bs-toggle="pill" data-bs-target="#dom-b8b753f6-0be6-49f0-b53b-9bcc8c0cbbc1" type="button" role="tab" aria-controls="dom-b8b753f6-0be6-49f0-b53b-9bcc8c0cbbc1" aria-selected="false" id="tab-dom-b8b753f6-0be6-49f0-b53b-9bcc8c0cbbc1">Code</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body bg-light">
+                  <div class="tab-content">
+                    <div class="tab-pane preview-tab-pane active" role="tabpanel" aria-labelledby="tab-dom-b01faf7b-4e0f-49c6-8f7f-bf8b9e6defc8" id="dom-b01faf7b-4e0f-49c6-8f7f-bf8b9e6defc8">
+                      <!-- Find the JS file for the following chart at: src/js/charts/chartjs/chart-scatter.js-->
+                      <!-- If you are not using gulp based workflow, you can find the transpiled code at: public/assets/js/theme.js-->
+                      <canvas class="max-w-100" id="chartjs-scatter-chart" height="200"></canvas>
+                    </div>
+                    <div class="tab-pane code-tab-pane" role="tabpanel" aria-labelledby="tab-dom-b8b753f6-0be6-49f0-b53b-9bcc8c0cbbc1" id="dom-b8b753f6-0be6-49f0-b53b-9bcc8c0cbbc1">
+                      <pre class="scrollbar rounded-1" style="max-height:420px"><code class="language-html">
+&lt;!-- Find the JS file for the following chart at: src/js/charts/chartjs/chart-scatter.js--&gt;
+
+&lt;!-- If you are not using gulp based workflow, you can find the transpiled code at: public/assets/js/theme.js--&gt;
+&lt;canvas class=&quot;max-w-100&quot; id=&quot;chartjs-scatter-chart&quot; height=&quot;200&quot;&gt;&lt;/canvas&gt;</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row g-3 mb-3">
+            <div class="col">
+              <div class="card">
+                <div class="card-header">
+                  <div class="row flex-between-end">
+                    <div class="col-auto align-self-center">
+                      <h5 class="mb-0" data-anchor="data-anchor">Combo Chart</h5>
+                    </div>
+                    <div class="col-auto ms-auto">
+                      <div class="nav nav-pills nav-pills-falcon flex-grow-1" role="tablist">
+                        <button class="btn btn-sm active" data-bs-toggle="pill" data-bs-target="#dom-a64642e5-2b79-4c9c-ad09-2ca8535a86ac" type="button" role="tab" aria-controls="dom-a64642e5-2b79-4c9c-ad09-2ca8535a86ac" aria-selected="true" id="tab-dom-a64642e5-2b79-4c9c-ad09-2ca8535a86ac">Preview</button>
+                        <button class="btn btn-sm" data-bs-toggle="pill" data-bs-target="#dom-7dc785c2-5732-4caa-8a89-2519754cfc82" type="button" role="tab" aria-controls="dom-7dc785c2-5732-4caa-8a89-2519754cfc82" aria-selected="false" id="tab-dom-7dc785c2-5732-4caa-8a89-2519754cfc82">Code</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body bg-light">
+                  <div class="tab-content">
+                    <div class="tab-pane preview-tab-pane active" role="tabpanel" aria-labelledby="tab-dom-a64642e5-2b79-4c9c-ad09-2ca8535a86ac" id="dom-a64642e5-2b79-4c9c-ad09-2ca8535a86ac">
+                      <!-- Find the JS file for the following chart at: src/js/charts/chartjs/chart-combo.js-->
+                      <!-- If you are not using gulp based workflow, you can find the transpiled code at: public/assets/js/theme.js-->
+                      <canvas class="max-w-100" id="chartjs-combo-chart" width="1618" height="500"></canvas>
+                    </div>
+                    <div class="tab-pane code-tab-pane" role="tabpanel" aria-labelledby="tab-dom-7dc785c2-5732-4caa-8a89-2519754cfc82" id="dom-7dc785c2-5732-4caa-8a89-2519754cfc82">
+                      <pre class="scrollbar rounded-1" style="max-height:420px"><code class="language-html">
+&lt;!-- Find the JS file for the following chart at: src/js/charts/chartjs/chart-combo.js--&gt;
+
+&lt;!-- If you are not using gulp based workflow, you can find the transpiled code at: public/assets/js/theme.js--&gt;
+&lt;canvas class=&quot;max-w-100&quot; id=&quot;chartjs-combo-chart&quot; width=&quot;1618&quot; height=&quot;500&quot;&gt;&lt;/canvas&gt;</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <footer class="footer">
+            <div class="row g-0 justify-content-between fs--1 mt-4 mb-3">
+              <div class="col-12 col-sm-auto text-center">
+                <p class="mb-0 text-600">Thank you for creating with Falcon <span class="d-none d-sm-inline-block">| </span><br class="d-sm-none" /> 2021 &copy; <a href="https://themewagon.com">Themewagon</a></p>
+              </div>
+              <div class="col-12 col-sm-auto text-center">
+                <p class="mb-0 text-600">v3.6.0</p>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </main>
+{% endblock %}
+  
+
+
+
+    <!-- ===============================================-->
+    <!--    JavaScripts-->
+    <!-- ===============================================-->
+    <script src="../../vendors/popper/popper.min.js"></script>
+    <script src="../../vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="../../vendors/anchorjs/anchor.min.js"></script>
+    <script src="../../vendors/is/is.min.js"></script>
+    <script src="../../vendors/prism/prism.js"></script>
+    <script src="../../vendors/fontawesome/all.min.js"></script>
+    <script src="../../vendors/lodash/lodash.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="../../vendors/list.js/list.min.js"></script>
+    <script src="../../assets/js/theme.js"></script>
+    <script src="../../vendors/chart/chart.min.js"></script>
+
+  </body>
+
+</html>
