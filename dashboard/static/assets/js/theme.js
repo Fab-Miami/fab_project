@@ -1106,6 +1106,9 @@ var formValidationInit = function formValidationInit() {
 
 var merge = window._.merge;
 
+console.log("---------------------")
+console.log(window)
+
 var renderCalendar = function renderCalendar(el, option) {
   var _document$querySelect;
 
@@ -10695,4 +10698,3 @@ docReady(chartBubble);
 docReady(chartLine);
 docReady(treeviewInit);
 docReady(scrollInit);
-//# sourceMappingURL=theme.js.map

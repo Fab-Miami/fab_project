@@ -31,19 +31,6 @@ def popup_order_list(request):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 def chartjs(request):
     stuff = 'blabla'
     context = {'bla': stuff}
